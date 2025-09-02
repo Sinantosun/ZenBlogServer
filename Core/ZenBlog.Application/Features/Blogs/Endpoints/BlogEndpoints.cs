@@ -45,6 +45,13 @@ namespace ZenBlog.Application.Features.Blogs.Endpoints
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             });
 
+            blogs.MapGet("GetLast5BlogsList", async (IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new GetLast5BlogQuery());
+
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            });
+
             blogs.MapPost(string.Empty, async (CreateBlogCommand command, IMediator _mediator) =>
             {
                 var response = await _mediator.Send(command);

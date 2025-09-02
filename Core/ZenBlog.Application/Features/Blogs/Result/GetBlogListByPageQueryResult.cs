@@ -5,7 +5,7 @@ using ZenBlog.Domain.Entites;
 
 namespace ZenBlog.Application.Features.Blogs.Result
 {
-    public class GetBlogListByPageQueryResult 
+    public class GetBlogListByPageQueryResult
     {
         public List<BlogListByPage> values { get; set; }
         public int TotalCount { get; set; }
@@ -19,7 +19,7 @@ namespace ZenBlog.Application.Features.Blogs.Result
         public string Description { get; set; }
 
         public GetCategoryQueryResult Category { get; set; }
-
+        public virtual string SubDescription { get => Description.Length > 150 ? Description.Substring(0, Description.Substring(0, 150).LastIndexOf(" ")) + "..." : Description; }
         public string UserId { get; set; }
     }
 }

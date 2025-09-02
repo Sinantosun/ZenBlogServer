@@ -7,5 +7,6 @@ namespace ZenBlog.Application.Features.Categories.Result
     public class GetCategoryQueryResult : BaseDto
     {
         public string CategoryName { get; set; }
+        public List<GetBlogsQueryResult> Blogs { get; set; }
     }
 }

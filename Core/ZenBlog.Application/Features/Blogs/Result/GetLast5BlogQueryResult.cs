@@ -1,12 +1,11 @@
-﻿using ZenBlog.Application.Base;
+﻿
 using ZenBlog.Application.Features.Categories.Result;
 using ZenBlog.Application.Features.Comments.Result;
 using ZenBlog.Application.Features.Users.Result;
-using ZenBlog.Domain.Entites;
 
 namespace ZenBlog.Application.Features.Blogs.Result
 {
-    public class GetBlogsQueryResult : BaseDto
+    public class GetLast5BlogQueryResult
     {
         public string Title { get; set; }
         public string CoverImage { get; set; }
@@ -18,11 +17,10 @@ namespace ZenBlog.Application.Features.Blogs.Result
 
         public string UserId { get; set; }
 
-
-        public virtual string SubDescription { get => Description.Length > 150 ? Description.Substring(0, Description.Substring(0, 150).LastIndexOf(" ")) + "..." : Description; }
-
         public GetUsersQueryResult User { get; set; }
 
         public IList<GetCommentsQueryResult> Comments { get; set; }
+
+        public virtual string SubDescription { get => Description.Length > 150 ? Description.Substring(0, Description.Substring(0, 150).LastIndexOf(" ")) + "..." : Description; }
     }
 }

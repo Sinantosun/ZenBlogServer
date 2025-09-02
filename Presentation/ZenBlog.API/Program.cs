@@ -1,4 +1,5 @@
 using Scalar.AspNetCore;
+using System.Text.Json.Serialization;
 using ZenBlog.API.CustomMiddlewares;
 using ZenBlog.API.Registiration;
 using ZenBlog.Application.Extensions;
@@ -17,6 +18,12 @@ builder.Services.AddCors(option =>
         cors.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
     });
 });
+
+builder.Services.ConfigureHttpJsonOptions(cfg =>
+{
+    cfg.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
+
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
