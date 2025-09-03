@@ -41,5 +41,9 @@ namespace ZenBlog.Application.Options
         {
             return new IdentityError { Code = "InvalidUserName", Description = $"Girdiğiniz Kullanıcı Adı ${userName} geçersiz lütfen tekrar deneyin." };
         }
+        public override IdentityError DuplicateRoleName(string role)
+        {
+            return new IdentityError { Code = "DuplicateRoleName", Description = $"Bu rol zaten ekli lütfen yeni rol girip ile tekrar deneyin." };
+        }
     }
 }

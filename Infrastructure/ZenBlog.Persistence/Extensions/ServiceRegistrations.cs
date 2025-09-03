@@ -55,6 +55,11 @@ namespace ZenBlog.Persistence.Extensions
                     ClockSkew = TimeSpan.Zero,
                 };
             });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+            });
         }
     }
 }

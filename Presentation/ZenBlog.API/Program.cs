@@ -15,7 +15,7 @@ builder.Services.AddCors(option =>
 {
     option.AddPolicy("MyCorsPolicy", cors =>
     {
-        cors.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+        cors.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200").AllowCredentials();
     });
 });
 
@@ -43,5 +43,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapGroup("/api").RegisterEndPoints();
+app.MapGroup("/api").RequireAuthorization("AdminOnly").RegisterEndPoints();
 app.Run();

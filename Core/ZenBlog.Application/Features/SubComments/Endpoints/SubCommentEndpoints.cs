@@ -12,7 +12,7 @@ namespace ZenBlog.Application.Features.SubComments.Endpoints
     {
         public static void AddSubCommentEndpoints(this IEndpointRouteBuilder app)
         {
-            var subComment = app.MapGroup("/subcomments").WithTags("SubComments");
+            var subComment = app.MapGroup("/subcomments").WithTags("SubComments").AllowAnonymous();
 
             subComment.MapPost(string.Empty, async (IMediator _mediator, CreateSubCommentCommand command) =>
             {

@@ -11,7 +11,7 @@ namespace ZenBlog.Application.Features.Comments.Endpoints
     {
         public static void AddCommentEndpoints(this IEndpointRouteBuilder app)
         {
-            var comments = app.MapGroup("/comments").WithTags("Comments");
+            var comments = app.MapGroup("/comments").WithTags("Comments").AllowAnonymous();
 
             comments.MapGet(string.Empty, async (IMediator _mediator) =>
             {

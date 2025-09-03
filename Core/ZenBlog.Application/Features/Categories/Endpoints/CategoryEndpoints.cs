@@ -16,13 +16,13 @@ namespace ZenBlog.Application.Features.Categories.Endpoints
             {
                 var response = await _mediator.Send(new GetCategoryQuery());
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-            });
+            }).AllowAnonymous();
 
             categories.MapGet("{id}", async (Guid id, IMediator _mediator) =>
             {
                 var response = await _mediator.Send(new GetCategoryByIdQuery(id));
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-            });
+            }).AllowAnonymous(); ;
 
             categories.MapGet("getCategoriesByPage/{page}", async (int page, IMediator _mediator) =>
             {
@@ -32,7 +32,7 @@ namespace ZenBlog.Application.Features.Categories.Endpoints
                 }
                 var response = await _mediator.Send(new GetCategoryListByPageQuery(page));
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-            });
+            }).AllowAnonymous(); ;
 
             categories.MapPost(string.Empty, async (CreateCategoryCommand command, IMediator _mediator) =>
             {

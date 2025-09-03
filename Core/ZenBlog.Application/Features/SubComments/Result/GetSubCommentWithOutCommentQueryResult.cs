@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZenBlog.Application.Features.Blogs.Result;
-using ZenBlog.Application.Features.SubComments.Result;
+using ZenBlog.Application.Features.Comments.Result;
 using ZenBlog.Application.Features.Users.Result;
 
-namespace ZenBlog.Application.Features.Comments.Result
+namespace ZenBlog.Application.Features.SubComments.Result
 {
-    public class GetCommentWithOutBlogQueryResult
+    public class GetSubCommentWithOutCommentQueryResult
     {
         public string UserId { get; set; }
         public GetUsersQueryResult User { get; set; }
@@ -17,7 +16,6 @@ namespace ZenBlog.Application.Features.Comments.Result
         public string Body { get; set; }
         public DateTime CommentDate { get; set; }
 
-        public List<GetSubCommentWithOutCommentQueryResult> SubComments { get; set; }
-        public Guid BlogId { get; set; }
+        public Guid CommentId { get; set; }
     }
 }

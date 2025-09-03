@@ -30,7 +30,7 @@ namespace ZenBlog.Application.Features.Messages.Endpoints
             {
                 var response = await _mediator.Send(new GetMessageQuery());
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-            });
+            }).AllowAnonymous();
 
             Message.MapDelete("{id}", async (Guid id, IMediator _mediator) =>
             {

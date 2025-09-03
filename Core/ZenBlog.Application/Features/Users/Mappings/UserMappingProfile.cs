@@ -11,6 +11,13 @@ namespace ZenBlog.Application.Features.Users.Mappings
         {
             CreateMap<AppUser, CreateUserCommand>().ReverseMap();
             CreateMap<AppUser, GetUsersQueryResult>().ReverseMap();
+
+            CreateMap<AppRole, GetRolesQueryResult>().ReverseMap();
+            CreateMap<AppRole, CreateRoleCommand>().ReverseMap();
+            CreateMap<AppRole, UpdateRoleCommand>().ReverseMap();
+            CreateMap<AppRole, GetRoleByIdQueryResult>().ReverseMap();
+
+
         }
     }
 }

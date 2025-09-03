@@ -31,7 +31,7 @@ namespace ZenBlog.Application.Features.ContactInfos.Endpoints
             {
                 var response = await _mediator.Send(new GetContactInfoQuery());
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-            });
+            }).AllowAnonymous();
 
             contactInfo.MapDelete("{id}", async (Guid id, IMediator _mediator) =>
             {

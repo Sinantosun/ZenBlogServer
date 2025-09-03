@@ -23,7 +23,7 @@ namespace ZenBlog.Application.Features.Socials.Endpoints
             {
                 var response = await _mediator.Send(new GetSocialByIdQuery(id));
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-            });
+            }).AllowAnonymous();
 
             socials.MapPost(string.Empty, async (CreateSocialCommand Social, IMediator _mediator) =>
             {
