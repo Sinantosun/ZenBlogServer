@@ -12,5 +12,7 @@ namespace ZenBlog.Domain.Entites
 
         public Guid CommentId { get; set; }
         public virtual Comment Comment { get; set; }
+        public virtual IList<ParentSubComment> ParentSubComments { get; set; }
+
     }
 }

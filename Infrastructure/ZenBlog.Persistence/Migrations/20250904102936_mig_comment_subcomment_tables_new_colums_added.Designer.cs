@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZenBlog.Persistence.Context;
 
@@ -11,9 +12,11 @@ using ZenBlog.Persistence.Context;
 namespace ZenBlog.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250904102936_mig_comment_subcomment_tables_new_colums_added")]
+    partial class mig_comment_subcomment_tables_new_colums_added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -318,6 +321,12 @@ namespace ZenBlog.Persistence.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsUpdated")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("OldMessageBody")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -403,41 +412,6 @@ namespace ZenBlog.Persistence.Migrations
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("ZenBlog.Domain.Entites.ParentSubComment", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Body")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CommentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("SubCommentId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SubCommentId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ParentSubComments");
-                });
-
             modelBuilder.Entity("ZenBlog.Domain.Entites.Social", b =>
                 {
                     b.Property<Guid>("Id")
@@ -485,6 +459,12 @@ namespace ZenBlog.Persistence.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsUpdated")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("OldMessageBody")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -591,25 +571,6 @@ namespace ZenBlog.Persistence.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ZenBlog.Domain.Entites.ParentSubComment", b =>
-                {
-                    b.HasOne("ZenBlog.Domain.Entites.SubComment", "Comment")
-                        .WithMany("ParentSubComments")
-                        .HasForeignKey("SubCommentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ZenBlog.Domain.Entites.AppUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Comment");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("ZenBlog.Domain.Entites.SubComment", b =>
                 {
                     b.HasOne("ZenBlog.Domain.Entites.Comment", "Comment")
@@ -651,11 +612,6 @@ namespace ZenBlog.Persistence.Migrations
             modelBuilder.Entity("ZenBlog.Domain.Entites.Comment", b =>
                 {
                     b.Navigation("SubComments");
-                });
-
-            modelBuilder.Entity("ZenBlog.Domain.Entites.SubComment", b =>
-                {
-                    b.Navigation("ParentSubComments");
                 });
 #pragma warning restore 612, 618
         }

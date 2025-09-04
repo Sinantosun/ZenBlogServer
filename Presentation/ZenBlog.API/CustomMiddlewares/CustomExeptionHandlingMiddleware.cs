@@ -33,7 +33,7 @@ namespace ZenBlog.API.CustomMiddlewares
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 context.Response.ContentType = "application/json";
 
-                await context.Response.WriteAsJsonAsync(BaseResult<object>.Fail());
+                await context.Response.WriteAsJsonAsync(BaseResult<object>.Fail(ex.Message));
             }
         }
     }

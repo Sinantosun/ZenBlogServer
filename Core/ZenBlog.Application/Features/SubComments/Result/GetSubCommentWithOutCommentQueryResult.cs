@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZenBlog.Application.Base;
 using ZenBlog.Application.Features.Comments.Result;
+using ZenBlog.Application.Features.ParentSubComments.Result;
 using ZenBlog.Application.Features.Users.Result;
+using ZenBlog.Domain.Entites;
 
 namespace ZenBlog.Application.Features.SubComments.Result
 {
-    public class GetSubCommentWithOutCommentQueryResult
+    public class GetSubCommentWithOutCommentQueryResult  : BaseDto
     {
         public string UserId { get; set; }
         public GetUsersQueryResult User { get; set; }
@@ -17,5 +20,7 @@ namespace ZenBlog.Application.Features.SubComments.Result
         public DateTime CommentDate { get; set; }
 
         public Guid CommentId { get; set; }
+
+        public List<GetParentSubCommentListQueryResult> ParentSubComments { get; set; }
     }
 }
