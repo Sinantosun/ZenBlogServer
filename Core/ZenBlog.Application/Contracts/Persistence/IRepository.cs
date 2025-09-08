@@ -21,4 +21,6 @@ public interface IRepository<TEntity> where TEntity : BaseEntity
     void Delete(TEntity entity);
 
     Task<(List<TEntity> Data, int TotalCount)> GetPagedAsync(int page = 1, int pageSize = 8);
+
+    Task DeleteManyWithFilterAsync(Expression<Func<TEntity, bool>> filter);
 }

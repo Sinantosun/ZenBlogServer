@@ -14,6 +14,8 @@ namespace ZenBlog.Application.Features.Messages.Mappings
             CreateMap<Message, UpdateMessageCommand>().ReverseMap();
             CreateMap<Message, GetMessageByIdQueryResult>().ReverseMap();
             CreateMap<Message, GetMessageQueryResult>().ReverseMap();
+            CreateMap<Message, GetUnReadMessageQueryResult>().ReverseMap();
+            CreateMap<Message, GetReadMessageQueryResult>().ReverseMap();
         }
     }
 }

@@ -26,6 +26,12 @@ namespace ZenBlog.Application.Features.ParentSubComments.Endpoints
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             });
 
+            parentSubComment.MapDelete("{id}", async (Guid id,IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new RemoveParentSubCommentCommand(id));
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            });
+
 
 
         }

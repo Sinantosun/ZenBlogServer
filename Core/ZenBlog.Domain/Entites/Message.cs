@@ -2,7 +2,7 @@
 
 namespace ZenBlog.Domain.Entites;
 
-public class Message :BaseEntity
+public class Message : BaseEntity
 {
     public string NameSurname { get; set; }
     public string Email { get; set; }

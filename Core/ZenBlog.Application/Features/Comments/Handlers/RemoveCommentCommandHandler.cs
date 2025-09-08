@@ -19,6 +19,10 @@ namespace ZenBlog.Application.Features.Comments.Handlers
             }
             _repository.Delete(value);
             await _unitOfWork.SaveChangeAsync();
+
+           
+
+
             return BaseResult<object>.Success("Kayıt Silindi...!");
         }
     }

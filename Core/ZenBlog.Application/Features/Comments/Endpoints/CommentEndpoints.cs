@@ -2,8 +2,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using System.Threading;
+using ZenBlog.Application.Contracts.Persistence;
 using ZenBlog.Application.Features.Comments.Commands;
 using ZenBlog.Application.Features.Comments.Queries;
+using ZenBlog.Application.Features.SubComments.Commands;
+using ZenBlog.Domain.Entites;
 
 namespace ZenBlog.Application.Features.Comments.Endpoints
 {
@@ -19,7 +23,7 @@ namespace ZenBlog.Application.Features.Comments.Endpoints
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             });
 
-            comments.MapGet("{id}", async (Guid id,IMediator _mediator) =>
+            comments.MapGet("{id}", async (Guid id, IMediator _mediator) =>
             {
                 var response = await _mediator.Send(new GetCommentByIdQuery(id));
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
@@ -39,6 +43,14 @@ namespace ZenBlog.Application.Features.Comments.Endpoints
 
             comments.MapDelete("{id}", async (Guid Id, IMediator _mediator) =>
             {
+                var response = await _mediator.Send(new RemoveCommentCommand(Id));
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            });
+
+
+            comments.MapDelete("DeleteCommentAndSubComments/{id}", async (IMediator _mediator, Guid Id) =>
+            {
+                await _mediator.Send(new RemoveManySubCommentCommand(Id));
                 var response = await _mediator.Send(new RemoveCommentCommand(Id));
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             });

@@ -18,7 +18,7 @@ namespace ZenBlog.Application.Features.Messages.Endpoints
             {
                 var response = await _mediator.Send(command);
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
-            });
+            }).AllowAnonymous();
 
             Message.MapPut(string.Empty, async (UpdateMessageCommand command, IMediator _mediator) =>
             {
@@ -43,6 +43,26 @@ namespace ZenBlog.Application.Features.Messages.Endpoints
             {
                 var response = await _mediator.Send(new GetMessageByIdQuery(id));
 
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            });
+
+            Message.MapGet("GetReadMessages", async (IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new GetReadMessageQuery());
+
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            });
+
+            Message.MapGet("GetUnReadMessages", async (IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new GetUnReadMessageQuery());
+
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            });
+
+            Message.MapGet("ChangeMessageStatus/{id}", async (Guid id,IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new ChangeMessageReadStatusCommand(id));
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             });
         }

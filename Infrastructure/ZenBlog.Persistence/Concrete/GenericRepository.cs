@@ -22,6 +22,8 @@ public class GenericRepository<TEntity>(AppDbContext _context) : IRepository<TEn
 
     public async Task<List<TEntity>> GetAllAsync()
     {
+
+
         return await _table.AsNoTracking().ToListAsync();
     }
 
@@ -39,12 +41,17 @@ public class GenericRepository<TEntity>(AppDbContext _context) : IRepository<TEn
     {
         var totalCount = await _table.CountAsync();
         var data = await _table.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
-        return (data, totalCount);  
+        return (data, totalCount);
     }
 
     public IQueryable<TEntity> GetQuery()
     {
         return _table;
+    }
+
+    public async Task DeleteManyWithFilterAsync(Expression<Func<TEntity, bool>> filter)
+    {
+        await _table.Where(filter).ExecuteDeleteAsync();
     }
 
     public async Task<TEntity> GetSingleAsync(Expression<Func<TEntity, bool>> filter)
