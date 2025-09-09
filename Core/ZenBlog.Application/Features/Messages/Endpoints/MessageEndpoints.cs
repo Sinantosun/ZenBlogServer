@@ -32,6 +32,12 @@ namespace ZenBlog.Application.Features.Messages.Endpoints
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             }).AllowAnonymous();
 
+            Message.MapGet("GetLastMessagesForDashboard", async (IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new GetLastMessagesForDashboardQuery());
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            });
+
             Message.MapDelete("{id}", async (Guid id, IMediator _mediator) =>
             {
                 var response = await _mediator.Send(new RemoveMessageCommand(id));

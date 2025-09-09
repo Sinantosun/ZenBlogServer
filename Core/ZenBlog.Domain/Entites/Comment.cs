@@ -14,5 +14,7 @@ namespace ZenBlog.Domain.Entites
 
         public Guid BlogId { get; set; }
         public virtual Blog Blog { get; set; }
+
+        public byte CommentAnalysis { get; set; } //0 = negatif - 1 = nötr - 2 = pozitif 3 = bilinmiyor/bulunamadı
     }
 }

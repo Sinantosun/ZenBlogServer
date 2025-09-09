@@ -52,12 +52,30 @@ namespace ZenBlog.Application.Features.Blogs.Endpoints
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             }).AllowAnonymous();
 
+            blogs.MapGet("GetBlogsBySameCategoryList/{Id}", async (Guid Id,IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new GetBlogsBySameCategoryQuery(Id));
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            }).AllowAnonymous();
+
             blogs.MapPost(string.Empty, async (CreateBlogCommand command, IMediator _mediator) =>
             {
                 var response = await _mediator.Send(command);
 
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             });
+
+            blogs.MapGet("GetMostCommentedBlogTitle", async (IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new GetMostCommentedBlogQuery());
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            }).AllowAnonymous();
+
+            blogs.MapGet("GetLeastCommentBlogTitle", async (IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new GetLeastBlogQuery());
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            }).AllowAnonymous();
 
             blogs.MapPut(string.Empty, async (UpdateBlogCommand command, IMediator _mediator) =>
             {

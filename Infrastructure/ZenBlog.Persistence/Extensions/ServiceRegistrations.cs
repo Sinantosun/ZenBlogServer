@@ -32,6 +32,8 @@ namespace ZenBlog.Persistence.Extensions
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IJwtService, JwtService>();
+            services.AddScoped<IHugginFaceService, HugginFaceService>();
+            services.AddScoped<IDashboardService, DashboardService>();
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
             services.AddAuthentication(options =>

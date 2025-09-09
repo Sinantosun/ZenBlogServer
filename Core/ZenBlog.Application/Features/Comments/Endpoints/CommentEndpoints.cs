@@ -23,6 +23,18 @@ namespace ZenBlog.Application.Features.Comments.Endpoints
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             });
 
+            comments.MapGet("GetBlogCommentAnalisyts", async (IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new GetCommentAnalizeStatisticQuery());
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            });
+
+            comments.MapGet("GetCommentTranslatedText/{text}", async (string text,IMediator _mediator) =>
+            {
+                var response = await _mediator.Send(new GetTranslateToEnglishQuery(text));
+                return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
+            }).AllowAnonymous(); 
+
             comments.MapGet("{id}", async (Guid id, IMediator _mediator) =>
             {
                 var response = await _mediator.Send(new GetCommentByIdQuery(id));

@@ -2,6 +2,7 @@
 using ZenBlog.Application.Features.Categories.Endpoints;
 using ZenBlog.Application.Features.Comments.Endpoints;
 using ZenBlog.Application.Features.ContactInfos.Endpoints;
+using ZenBlog.Application.Features.Dashboard.Endpoints;
 using ZenBlog.Application.Features.Messages.Endpoints;
 using ZenBlog.Application.Features.ParentSubComments.Endpoints;
 using ZenBlog.Application.Features.Socials.Endpoints;
@@ -23,6 +24,7 @@ namespace ZenBlog.API.Registiration
             app.AddMessageEndpoints();
             app.AddSocialEndpoints();
             app.AddParentSubCommentEndpoints();
+            app.AddDashboardEndpoints();
 
         }
     }
