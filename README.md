@@ -13,7 +13,7 @@ ZenBlog, tamamen işlevsel bir blog uygulaması olarak tasarlanmıştır. Backen
 
 <h2>Frontend</h2>
 
-📌 Modern Angular Mimarisi: Component, service ve modüllerle ölçeklenebilir yapı.<br>
+📌 Modern Angular Mimarisi: Component, service<br>
 📌 Responsive Tasarım: Mobil, tablet ve masaüstü cihazlarla uyumlu.<br>
 📌 Backend API Entegrasyonu: Sorunsuz veri iletişimi.<br>
 📌 Single Page Application (SPA): Kesintisiz ve akıcı kullanıcı deneyimi.<br>
