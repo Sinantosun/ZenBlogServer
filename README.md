@@ -42,14 +42,16 @@ Bu sayede, gerçek zamanlı duygu analizi ve yorum yönetimi sağlanabilir.
 ---
 
 ## Admin Ekranı
---
 ## Dashboard
 
 <img width="1848" height="918" alt="admin01" src="https://github.com/user-attachments/assets/0300936b-7e43-421d-ba94-2ce6b8ce9a72" />
 
 - Toplam blog kullanıcı okunmayan mesajlar ve kategori sayısı widget üzerinde gösteriliyor.
-- orum yapılırken Hugging Face AI ile analiz edilen ve analiz sonucunda çıkan duygu durumları widgetler üzerinde gösteriliyor, analiz sadece tekli yorumlarda geçerlidir alt yorumlar için analiz yapılmıyor.
+- 
+- Yorum yapılırken Hugging Face AI ile analiz edilen ve analiz sonucunda çıkan duygu durumları widgetler üzerinde gösteriliyor, analiz sadece tekli yorumlarda geçerlidir alt yorumlar için analiz yapılmıyor.
+- 
 - En çok yorum alan blog ve en az yorum alan blogların blog başlıkları widget üzerinde gösteriliyor Her iki durum için de alt yorumlar baz alınmıyor. Eğer hiç yorum almayan blog birden fazlaysa ilk karşılaşılan bloğun başlığı dikkate alınıyor.
+- 
 - Okunmayan Son Mesajlar tablo formatında listeleniyor.
 
   
