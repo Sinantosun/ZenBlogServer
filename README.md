@@ -5,23 +5,16 @@ ZenBlog, tamamen işlevsel bir blog uygulaması olarak tasarlanmıştır. Backen
 
 <h1>Özellikler</h1>
 <h2>Backend</h2>
-📌 Onion / Clean Architecture: Katmanlı mimari ile test edilebilir ve bakımı kolay bir yapı.
-
-📌 Mediator Design Pattern (MediatR): Uygulama içi komut ve sorgu yönetimi.
-
-📌 RESTful API: Güvenli ve standartlara uygun API endpoint’leri.
-
-📌 Entity Framework Core: Profesyonel veritabanı işlemleri.
-
-📌 JWT Authentication & Authorization: Kullanıcı güvenliği.
+📌 Onion / Clean Architecture: Katmanlı mimari ile test edilebilir ve bakımı kolay bir yapı.<br>
+📌 Mediator Design Pattern (MediatR): Uygulama içi komut ve sorgu yönetimi.<br>
+📌 RESTful API: Güvenli ve standartlara uygun API endpoint’leri.<br>
+📌 Entity Framework Core: Profesyonel veritabanı işlemleri.<br>
+📌 JWT Authentication & Authorization: Kullanıcı güvenliği.<br>
 
 <h2>Frontend</h2>
 
-📌 Modern Angular Mimarisi: Component, service ve modüllerle ölçeklenebilir yapı.
-
-📌 Responsive Tasarım: Mobil, tablet ve masaüstü cihazlarla uyumlu.
-
-📌 Backend API Entegrasyonu: Sorunsuz veri iletişimi.
-
-📌 Single Page Application (SPA): Kesintisiz ve akıcı kullanıcı deneyimi.
+📌 Modern Angular Mimarisi: Component, service ve modüllerle ölçeklenebilir yapı.<br>
+📌 Responsive Tasarım: Mobil, tablet ve masaüstü cihazlarla uyumlu.<br>
+📌 Backend API Entegrasyonu: Sorunsuz veri iletişimi.<br>
+📌 Single Page Application (SPA): Kesintisiz ve akıcı kullanıcı deneyimi.<br>
 
