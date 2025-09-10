@@ -54,8 +54,6 @@ Bu sayede, gerçek zamanlı duygu analizi ve yorum yönetimi sağlanabilir.
 
 <img width="1848" height="918" alt="home06" src="https://github.com/user-attachments/assets/be9c1feb-5ca5-471b-9cc9-507a5f7a8ff6" />
 
--- Çevirim sonrası 
-
 ## Admin Ekranı
 ## Dashboard
 
@@ -69,8 +67,11 @@ En çok yorum alan blog ve en az yorum alan blogların blog başlıkları widget
   
 Okunmayan Son Mesajlar tablo formatında listeleniyor. 
 
+<img width="1848" height="918" alt="admin02" src="https://github.com/user-attachments/assets/5d127028-2436-4a05-932e-e83a7e53d479" />
+<img width="1848" height="918" alt="admin03" src="https://github.com/user-attachments/assets/4331765b-768a-4b53-9a9e-ef11a82830c0" />
+<img width="1848" height="918" alt="admin04" src="https://github.com/user-attachments/assets/42d9f4c4-8daf-47d0-8033-85dcb071e4b9" />
+<img width="1864" height="918" alt="admin07" src="https://github.com/user-attachments/assets/3208d0d3-e9bc-42b3-a91e-7c7d6da10c2b" />
 
-  
   
 
 
