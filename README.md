@@ -1,28 +1,48 @@
-ZenBlog, .NET 9 ve Angular 19 kullanılarak geliştirilmiş modern bir blog platformudur. Bu proje, endüstri standartlarına uygun, sürdürülebilir ve yüksek performanslı web uygulamaları geliştirme deneyimi kazanmak amacıyla oluşturulmuştur.
+# ZenBlog
 
-<h1>Proje Hakkında</h1>
-ZenBlog, tamamen işlevsel bir blog uygulaması olarak tasarlanmıştır. Backend tarafında .NET 9, frontend tarafında Angular 19 kullanılmıştır. Bu sayede, modern full-stack geliştirme pratiklerini ve güncel teknolojileri uygulamalı olarak deneyimleme imkânı sağlar.
-Huggingface AI kullanarak Bu projede kullanıcı duygu durumlarını analiz edebiliyoruz. Süreç şu şekilde işliyor: <br><br>
+ZenBlog, **.NET 9** ve **Angular 19** kullanılarak geliştirilmiş modern bir blog platformudur. Bu proje, endüstri standartlarına uygun, sürdürülebilir ve yüksek performanslı web uygulamaları geliştirme deneyimi kazanmak amacıyla oluşturulmuştur.
 
-1.Kullanıcı yorumu girildiğinde önce Türkçe yorum İngilizce’ye çevriliyor. <br>
-2.İngilizce yorum Hugging Face AI kullanılarak başka bir yapay zekâ ile analiz ediliyor.<br>
-3.Analiz sonucunda yorum pozitif, negatif veya nötr olarak sınıflandırılıyor ve bu bilgi comment tablosuna kaydediliyor.<br>
-4.Dashboard üzerinden toplam olumlu, olumsuz ve nötr yorum sayıları görüntülenebiliyor.<br>
+---
 
-Bu sayede gerçek zamanlı duygu analizi ve yorum yönetimi yapılabiliyor.
+## Proje Hakkında
 
-<h1>Özellikler</h1>
-<h2>Backend</h2>
-📌 Onion / Clean Architecture: Katmanlı mimari ile test edilebilir ve bakımı kolay bir yapı.<br>
-📌 Mediator Design Pattern (MediatR): Uygulama içi komut ve sorgu yönetimi.<br>
-📌 RESTful API: Güvenli ve standartlara uygun API endpoint’leri.<br>
-📌 Entity Framework Core: Profesyonel veritabanı işlemleri.<br>
-📌 JWT Authentication & Authorization: Kullanıcı güvenliği.<br>
+ZenBlog, tamamen işlevsel bir blog uygulamasıdır.
 
-<h2>Frontend</h2>
+- **Backend:** .NET 9  
+- **Frontend:** Angular 19  
 
-📌 Modern Angular Mimarisi: Component, service<br>
-📌 Responsive Tasarım: Mobil, tablet ve masaüstü cihazlarla uyumlu.<br>
-📌 Backend API Entegrasyonu: Sorunsuz veri iletişimi.<br>
-📌 Single Page Application (SPA): Kesintisiz ve akıcı kullanıcı deneyimi.<br>
+Proje, modern full-stack geliştirme pratiklerini ve güncel teknolojileri uygulamalı olarak deneyimleme imkânı sunar.
 
+Ayrıca, **Hugging Face AI** kullanılarak kullanıcı yorumlarının duygu durumları analiz edilebilmektedir. Süreç şu şekilde işliyor:
+
+1. Kullanıcı yorum girdiğinde önce **Türkçe yorum İngilizce’ye çevrilir**.  
+2. İngilizce yorum, **Hugging Face AI** ile analiz edilir.  
+3. Yorum, **pozitif, negatif veya nötr** olarak sınıflandırılır ve veritabanındaki yorum tablosuna kaydedilir.  
+4. Dashboard üzerinden toplam olumlu, olumsuz ve nötr yorum sayıları görüntülenebilir.
+
+Bu sayede, gerçek zamanlı duygu analizi ve yorum yönetimi sağlanabilir.
+
+---
+
+## Özellikler
+
+### Backend
+- **Onion / Clean Architecture:** Katmanlı mimari ile test edilebilir ve bakımı kolay bir yapı.  
+- **Mediator Design Pattern (MediatR):** Uygulama içi komut ve sorgu yönetimi.  
+- **RESTful API:** Güvenli ve standartlara uygun API endpoint’leri.  
+- **Entity Framework Core:** Profesyonel veritabanı işlemleri.  
+- **JWT Authentication & Authorization:** Kullanıcı güvenliği.  
+
+### Frontend
+- **Modern Angular Mimarisi:** Component ve service tabanlı yapı.  
+- **Responsive Tasarım:** Mobil, tablet ve masaüstü cihazlarla uyumlu.  
+- **Backend API Entegrasyonu:** Sorunsuz veri iletişimi.  
+- **Single Page Application (SPA):** Kesintisiz ve akıcı kullanıcı deneyimi.
+
+---
+
+## Kurulum
+
+1. Repository’yi klonlayın:
+   ```bash
+   git clone https://github.com/kullaniciadi/ZenBlog.git
