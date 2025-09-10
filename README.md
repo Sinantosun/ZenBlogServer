@@ -31,13 +31,15 @@ Bu sayede, gerçek zamanlı duygu analizi ve yorum yönetimi sağlanabilir.
 - **Mediator Design Pattern (MediatR):** Uygulama içi komut ve sorgu yönetimi.  
 - **RESTful API:** Güvenli ve standartlara uygun API endpoint’leri.  
 - **Entity Framework Core:** Profesyonel veritabanı işlemleri.  
-- **JWT Authentication & Authorization:** Kullanıcı güvenliği.  
+- **JWT Authentication & Authorization:** Kullanıcı güvenliği.
+- https://github.com/Sinantosun/ZenBlogServer
 
 ### Frontend
 - **Modern Angular Mimarisi:** Component ve service tabanlı yapı.  
 - **Responsive Tasarım:** Mobil, tablet ve masaüstü cihazlarla uyumlu.  
 - **Backend API Entegrasyonu:** Sorunsuz veri iletişimi.  
 - **Single Page Application (SPA):** Kesintisiz ve akıcı kullanıcı deneyimi.
+- https://github.com/Sinantosun/ZenBlogClient
 
 ---
 
