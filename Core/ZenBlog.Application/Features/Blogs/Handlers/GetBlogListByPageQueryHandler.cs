@@ -1,6 +1,7 @@
 ﻿
 using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using ZenBlog.Application.Base;
 using ZenBlog.Application.Contracts.Persistence;
 using ZenBlog.Application.Features.Blogs.Queries;
@@ -15,12 +16,12 @@ namespace ZenBlog.Application.Features.Blogs.Handlers
         {
             var values = await _repository.GetPagedAsync(request._page, request._pageSize);
             var mappedValues = _mapper.Map<List<BlogListByPage>>(values.Data);
-
+            var totalCount = await _repository.GetQuery().CountAsync();
             return new BaseResult<GetBlogListByPageQueryResult>
             {
                 Data = new GetBlogListByPageQueryResult
                 {
-                    TotalCount = mappedValues.Count,
+                    TotalCount = totalCount,
                     values = mappedValues
                 },
             };
