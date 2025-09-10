@@ -2,7 +2,7 @@ ZenBlog, .NET 9 ve Angular 19 kullanılarak geliştirilmiş modern bir blog plat
 
 <h1>Proje Hakkında</h1>
 ZenBlog, tamamen işlevsel bir blog uygulaması olarak tasarlanmıştır. Backend tarafında .NET 9, frontend tarafında Angular 19 kullanılmıştır. Bu sayede, modern full-stack geliştirme pratiklerini ve güncel teknolojileri uygulamalı olarak deneyimleme imkânı sağlar.
-Huggingface kullanarak Bu projede kullanıcı duygu durumlarını analiz edebiliyoruz. Süreç şu şekilde işliyor:
+Huggingface kullanarak Bu projede kullanıcı duygu durumlarını analiz edebiliyoruz. Süreç şu şekilde işliyor: <br><br>
 
 1.Kullanıcı yorumu girildiğinde önce Türkçe yorum İngilizce’ye çevriliyor. <br>
 2.İngilizce yorum Hugging Face AI kullanılarak başka bir yapay zekâ ile analiz ediliyor.<br>
